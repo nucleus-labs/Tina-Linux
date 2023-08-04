@@ -11,8 +11,8 @@ PKG_NAME:=lz4
 PKG_VERSION:=1.9.2
 PKG_RELEASE:=1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://fossies.org/linux/misc/
+PKG_SOURCE:=v$(PKG_VERSION).tar.gz
+PKG_SOURCE_URL:=https://github.com/lz4/lz4/archive/refs/tags/
 PKG_MD5SUM:=3898c56c82fb3d9455aefd48db48eaad
 
 HOST_FIXUP:=autoreconf
