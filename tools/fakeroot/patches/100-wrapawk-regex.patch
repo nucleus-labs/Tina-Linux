@@ -1,0 +1,13 @@
+Index: fakeroot-1.20.2/wrapawk
+===================================================================
+--- fakeroot-1.20.2.orig/wrapawk
++++ fakeroot-1.20.2/wrapawk
+@@ -24,7 +24,7 @@ BEGIN{
+
+ /\/\*/{
+ }
+-/^(\#)/{
++/^(#)/{
+   print $0 > structfile;
+   print $0 > tmpffile;
+   print $0 > deffile;
