@@ -62,7 +62,6 @@ GTAGS
 \#*#
 
 # Kconfig presets
-.config
 .config.old
 
 # bin
