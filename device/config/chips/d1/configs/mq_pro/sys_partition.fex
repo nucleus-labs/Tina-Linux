@@ -1,35 +1,44 @@
 ;---------------------------------------------------------------------------------------------------
-; 说明： 脚本中的字符串区分大小写，用户可以修改"="后面的数值，但是不要修改前面的字符串
+; Note: The strings in the script are case-sensitive. Users can modify the value after "=",
+;       but do not modify the preceding string.
 ;---------------------------------------------------------------------------------------------------
 
 
 ;---------------------------------------------------------------------------------------------------
-;                                   固件下载参数配置
+;                             Firmware download parameter configuration
 ;---------------------------------------------------------------------------------------------------
 ;***************************************************************************************************
-;    mbr的大小, 以Kbyte为单位
+;    The size of the mbr, in Kbytes
 ;***************************************************************************************************
 [mbr]
 size = 16384
 
 ;***************************************************************************************************
-;                                              分区配置
+;                                     Partition configuration
 ;
 ;
-;  partition 定义范例:
-;    [partition]                ;  //表示是一个分区
-;    name        = USERFS2      ; //分区名称
-;    size        = 16384        ; //分区大小 单位: 扇区.分区表示个数最多2^31 * 512 = 2T
-;    downloadfile = "123.fex"   ; //下载文件的路径和名称，可以使用相对路径，相对是指相对于image.cfg文件所在分区。也可以使用绝对路径
-;    keydata     = 1            ; //私有数据分区，重新量产数据将不丢失
-;    encrypt     = 1            ; //采用加密方式烧录，将提供数据加密，但损失烧录速度
-;    user_type   = ?            ; //私有用法
-;    verify      = 1            ; //要求量产完成后校验是否正确
+;  partition definition example:
+;    [partition]                ;   //  Represents a partition
+;    name        = USERFS2      ;   //  Partition name
+;    size        = 16384        ;   //  Partition size unit: sector. The maximum number of
+;                                       partitions represented is 2^31 * 512 = 2T
+;    downloadfile = "123.fex"   ;   //  For the path and name of the downloaded file, you can use
+;                                       a relative path. Relative means relative to the partition
+;                                       where the image.cfg file is located. You can also use
+;                                       absolute paths
+;    keydata     = 1            ;   //  Private data partition, data will not be lost when mass
+;                                       production is resumed
+;    encrypt     = 1            ;   //  Using encrypted burning method will provide data
+;                                       encryption, but will lose the burning speed.
+;    user_type   = ?            ;   //  private usage
+;    verify      = 1            ;   //  It is required to verify whether it is correct after mass
+;                                       production is completed.
 ;
-; 注：1、name唯一, 不允许同名
-;     2、name最大12个字符
-;     3、size = 0, 将创建一个无大小的空分区
-;     4、align to logical block size(504 sectors), leb size = 2*(1 nand phy block size - 1 phy page size)
+; Note: 1.  The names are unique, identical names are not allowed
+;       2.  name maximum 12 characters
+;       3.  size = 0, will create an empty partition with no size
+;       4.  align to logical block size(504 sectors),
+;           leb size = 2*(1 nand phy block size - 1 phy page size)
 ;***************************************************************************************************
 [partition_start]
 
