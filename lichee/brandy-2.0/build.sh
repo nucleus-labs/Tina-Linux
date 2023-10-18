@@ -132,8 +132,8 @@ function build_spl-pub_once()
 	if [ "x${mode}" = "xall" ];then
 		echo --------build for mode:${mode} board:${board}-------------------
 		make distclean
-		make b=${board}  ${CP}
-		make -j ${CP}
+		make CROSS_COMPILE="/builds/linux-tina/lichee/brandy-2.0/spl-pub/../tools/toolchain/riscv64-linux-x86_64-20200528/bin/riscv64-unknown-linux-gnu-" b=${board}  ${CP}
+		make CROSS_COMPILE="/builds/linux-tina/lichee/brandy-2.0/spl-pub/../tools/toolchain/riscv64-linux-x86_64-20200528/bin/riscv64-unknown-linux-gnu-" -j ${CP}
 	else
 		echo --------build for mode:${mode} board:${board}-------------------
 		make distclean
